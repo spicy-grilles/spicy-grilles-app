@@ -1,0 +1,137 @@
+body {
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 3rem;
+  background: linear-gradient(to bottom right, #36d1dc, #5b86e5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+nav ul {
+  display: flex;
+  justify-content: flex-end; }
+  nav ul li {
+    margin-right: 5rem; }
+  nav ul li:last-child {
+    margin-right: 6rem; }
+  nav ul a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.3rem; }
+    nav ul a img {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      left: 3rem;
+      top: 2rem;
+      border: 0.4rem solid white;
+      padding: 0.5rem;
+      border-radius: 2rem;
+      opacity: 0.8; }
+    nav ul a img:hover {
+      opacity: 1; }
+
+.login,
+.signup {
+  animation: fadeIn 3s;
+  transition: all 3s;
+  padding: 6rem; }
+  .login h2,
+  .signup h2 {
+    margin: 2.5em 0;
+    font-size: 2rem;
+    text-align: center;
+    color: whitesmoke; }
+  .login form,
+  .signup form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center; }
+    .login form input,
+    .signup form input {
+      margin: 1.5rem 0;
+      border-radius: 2rem;
+      width: 8rem;
+      height: 2rem;
+      text-align: center;
+      color: #329832;
+      font-size: 1rem; }
+    .login form input::placeholder,
+    .signup form input::placeholder {
+      text-align: center;
+      color: rgba(50, 152, 50, 0.5); }
+    .login form button,
+    .signup form button {
+      margin: 1.5rem 0;
+      border-radius: 2rem;
+      width: 8rem;
+      height: 2rem;
+      font-size: 1rem;
+      color: #329832; }
+    .login form p,
+    .signup form p {
+      margin: 1.2rem 0;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6); }
+      .login form p a,
+      .signup form p a {
+        text-decoration: none;
+        color: white; }
+
+.home {
+  animation: fadeIn 3s;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .home h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 5rem;
+    color: antiquewhite; }
+  .home img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 5rem;
+    transition: all 3s; }
+  .home img:hover {
+    animation: rotate 2s; }
+  .home a {
+    margin-top: 5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    color: #0fab0f;
+    text-align: center;
+    text-justify: auto;
+    transition: all 1s;
+    background-color: rgba(255, 255, 255, 0.762);
+    border-radius: 2rem;
+    padding: 2rem 5rem; }
+  .home a:hover {
+    transform: scale(1.5, 1.5); }
+
+.profile {
+  display: flex;
+  flex-direction: column; }
+  .profile .avatar {
+    background-color: chartreuse;
+    border: 1rem solid whitesmoke;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*# sourceMappingURL=style.css.map */
