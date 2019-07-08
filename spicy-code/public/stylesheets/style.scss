@@ -7,12 +7,20 @@ body {
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
+
 // Nav Bar
 nav {
   ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    li {
+      margin-right: 5rem;
+    }
+    li:last-child {
+      margin-right: 6rem;
+    }
     a {
       text-decoration: none;
       color: whitesmoke;
@@ -38,6 +46,8 @@ nav {
 // Login && SignUp Page
 .login,
 .signup {
+  animation: fadeIn 3s;
+  transition: all 3s;
   padding: 6rem;
   h2 {
     margin: 2.5em 0;
@@ -83,5 +93,84 @@ nav {
         color: rgba(255, 255, 255, 1);
       }
     }
+  }
+}
+
+//Home Page
+.home {
+  animation: fadeIn 3s;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 5rem;
+    color: antiquewhite;
+  }
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 5rem;
+    transition: all 3s;
+  }
+
+  img:hover {
+    animation: rotate 2s;
+  }
+
+  a {
+    margin-top: 5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    color: rgb(15, 171, 15);
+    text-align: center;
+    text-justify: auto;
+    transition: all 1s;
+    background-color: rgba(255, 255, 255, 0.762);
+    border-radius: 2rem;
+    padding: 2rem 5rem;
+  }
+  a:hover {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+//Profile
+
+.profile {
+  animation: fadeIn 3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .avatar {
+    background-color: chartreuse;
+    border: 1rem solid whitesmoke;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
