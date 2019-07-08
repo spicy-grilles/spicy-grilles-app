@@ -1,8 +1,87 @@
+// Body
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 3rem;
+  background: linear-gradient(to bottom right, #36d1dc, #5b86e5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+// Nav Bar
+nav {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 1.3rem;
+      img {
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        left: 3rem;
+        top: 2rem;
+        border: 0.4rem solid white;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        opacity: 0.8;
+      }
+      img:hover {
+        opacity: 1;
+      }
+    }
+  }
 }
 
-a {
-  color: #00B7FF;
+// Login && SignUp Page
+.login,
+.signup {
+  padding: 6rem;
+  h2 {
+    margin: 2.5em 0;
+    font-size: 2rem;
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    input {
+      margin: 1.5rem 0;
+      border-radius: 2rem;
+      width: 8rem;
+      height: 2rem;
+      text-align: center;
+      color: rgba(50, 152, 50, 1);
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      text-align: center;
+      color: rgba(50, 152, 50, 0.5);
+    }
+
+    button {
+      margin: 1.5rem 0;
+      border-radius: 2rem;
+      width: 8rem;
+      height: 2rem;
+      font-size: 1rem;
+      color: rgba(50, 152, 50, 1);
+    }
+    p {
+      margin: 1.2rem 0;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
 }
