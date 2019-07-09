@@ -74,7 +74,10 @@ nav {
         color: rgba(50, 152, 50, 0.5);
       }
     }
-
+    .error-message {
+      background: rgba(133, 15, 15, 0.6);
+      
+    }
     button {
       margin: 1.5rem 0;
       border-radius: 2rem;
