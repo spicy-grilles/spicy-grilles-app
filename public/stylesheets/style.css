@@ -186,9 +186,14 @@ nav ul {
   .lobby a:hover {
     transform: scale(1.5, 1.5); }
 
-.game #mapCanvas {
-  width: 90vw;
-  height: 90vh; }
+.game {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-right: 3rem; }
+  .game #mapCanvas {
+    width: 90vw;
+    height: 80vh; }
 
 @keyframes rotate {
   from {

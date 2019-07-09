@@ -235,10 +235,14 @@ nav {
 
 
 .game {
-  
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-right: 3rem;
+
 #mapCanvas {
   width: 90vw;
-  height: 90vh;
+  height: 80vh;
 }
 
 }

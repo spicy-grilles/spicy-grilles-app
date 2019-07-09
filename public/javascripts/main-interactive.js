@@ -5,7 +5,8 @@ function initialize() {
     var myOptions = {
         zoom: 16,
         center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true
     };
     map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
 
