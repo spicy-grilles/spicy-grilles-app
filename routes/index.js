@@ -1,29 +1,50 @@
 const express = require('express');
 const router  = express.Router();
+const multer = require("multer");
+const upload = multer({ dest: './public/uploads/' }); //aquí guardará el usuario su imagen
+const User = require("../models/User")
+const bcrypt = require("bcrypt");
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-router.get("/profile"), (req, res) => {
-  res.render("/auth/profile")
-}
+router.get("/profile", (req, res) => {
+  User
+  .findById(req.user._id)
+  .then(user => {
+    res.render('profile', user);
+  })
+});
 
-router.get("/ranking"), (req, res) => {
-  res.render("/auth/ranking")
-}
+router.post('/profile', upload.single('photo'), (req, res, next) => {
+  User
+    .findByIdAndUpdate({
+      avatarPath: `/uploads/${req.file.filename}`
+    })
+    .then(newAvatarCreated => {
+      res.redirect('/profile');
+    })
+});
 
-router.get("/lobby"), (req, res) => {
-  res.render("/auth/lobby")
-}
+router.get("/ranking", (req, res) => {
+  res.render("ranking")
+});
 
-router.get("/about-us"), (req, res) => {
-  res.render("/auth/about-us")
-}
+router.get("/lobby", (req, res) => {
+  res.render("lobby")
+});
 
-router.get("/play"), (req, res) => {
-  res.render("/auth/play")
-}
+router.get("/about-us", (req, res) => {
+  res.render("about-us")
+});
+
+router.get("/play", (req, res) => {
+  res.render("play")
+});
 
 module.exports = router;
+
+
