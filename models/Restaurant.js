@@ -17,4 +17,4 @@ const restSchema = new Schema({
 });
 
 const Rest = mongoose.model('Rest', restSchema);
-module.exports = User;
+module.exports = Rest;
