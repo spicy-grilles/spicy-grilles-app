@@ -19,6 +19,16 @@ router.get("/profile", (req, res) => {
   })
 });
 
+router.post('/profile', upload.single('photo'), (req, res, next) => {
+  User
+    .findByIdAndUpdate({
+      avatarPath: `/uploads/${req.file.filename}`
+    })
+    .then(newAvatarCreated => {
+      res.redirect('/profile');
+    })
+});
+
 router.get("/ranking", (req, res) => {
   res.render("ranking")
 });
@@ -36,3 +46,5 @@ router.get("/play", (req, res) => {
 });
 
 module.exports = router;
+
+
