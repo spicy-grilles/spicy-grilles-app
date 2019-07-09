@@ -35,9 +35,9 @@ nav {
         padding: 0.5rem;
         border-radius: 2rem;
         opacity: 0.8;
-      }
-      img:hover {
-        opacity: 1;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
@@ -69,11 +69,10 @@ nav {
       text-align: center;
       color: rgba(50, 152, 50, 1);
       font-size: 1rem;
-    }
-
-    input::placeholder {
-      text-align: center;
-      color: rgba(50, 152, 50, 0.5);
+      &::placeholder {
+        text-align: center;
+        color: rgba(50, 152, 50, 0.5);
+      }
     }
 
     button {
@@ -116,10 +115,9 @@ nav {
     height: 10rem;
     margin-top: 5rem;
     transition: all 3s;
-  }
-
-  img:hover {
-    animation: rotate 2s;
+    &:hover {
+      animation: rotate 2s;
+    }
   }
 
   a {

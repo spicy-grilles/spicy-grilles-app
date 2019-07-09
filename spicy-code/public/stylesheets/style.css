@@ -29,8 +29,8 @@ nav ul {
       padding: 0.5rem;
       border-radius: 2rem;
       opacity: 0.8; }
-    nav ul a img:hover {
-      opacity: 1; }
+      nav ul a img:hover {
+        opacity: 1; }
 
 .login,
 .signup {
@@ -58,10 +58,10 @@ nav ul {
       text-align: center;
       color: #329832;
       font-size: 1rem; }
-    .login form input::placeholder,
-    .signup form input::placeholder {
-      text-align: center;
-      color: rgba(50, 152, 50, 0.5); }
+      .login form input::placeholder,
+      .signup form input::placeholder {
+        text-align: center;
+        color: rgba(50, 152, 50, 0.5); }
     .login form button,
     .signup form button {
       margin: 1.5rem 0;
@@ -96,8 +96,8 @@ nav ul {
     height: 10rem;
     margin-top: 5rem;
     transition: all 3s; }
-  .home img:hover {
-    animation: rotate 2s; }
+    .home img:hover {
+      animation: rotate 2s; }
   .home a {
     margin-top: 5rem;
     text-decoration: none;
@@ -113,8 +113,10 @@ nav ul {
     transform: scale(1.5, 1.5); }
 
 .profile {
+  animation: fadeIn 3s;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: center; }
   .profile .avatar {
     background-color: chartreuse;
     border: 1rem solid whitesmoke;
