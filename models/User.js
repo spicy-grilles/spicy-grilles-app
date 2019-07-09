@@ -10,7 +10,7 @@ const userSchema = new Schema({
     enum: ['avatONE', 'avatTWO', 'avatTHREE', 'avatFOUR', 'avatFIVE','upload IMG'],
     default: 'avatONE'
   },
-  avatarPath: {type: String, default: '/public/images/srirachi.png'},
+  avatarPath: {type: String, default: '/images/srirachi.png'},
   pointsGlobal: {type: Number, default: 0},
   pointsMatch: {type: Number, default: 0},
   energyMatch: {type: Number, default: 100}
