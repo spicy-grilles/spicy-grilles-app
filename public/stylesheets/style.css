@@ -124,14 +124,46 @@ nav ul {
   margin-top: 8rem;
   animation: fadeIn 3s;
   display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .profile .avatar {
-    margin: 2rem;
-    border: 1rem solid chartreuse;
-    border-radius: 50%;
-    width: 6rem;
-    height: 6rem; }
+  justify-content: space-around; }
+  .profile h3 {
+    font-size: 4rem; }
+  .profile .aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .profile .aside img {
+      margin: 2rem;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 2rem; }
+    .profile .aside form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .profile .aside form button {
+        margin-top: 2rem;
+        padding: 0.5rem;
+        border-radius: 2rem; }
+  .profile .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .profile .container h3 {
+      color: antiquewhite; }
+    .profile .container .medals {
+      color: antiquewhite;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      background-color: #5b87e5ad;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 2rem;
+      padding-top: 3rem; }
+      .profile .container .medals div {
+        padding: 4rem; }
 
 @keyframes rotate {
   from {
