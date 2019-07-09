@@ -150,15 +150,57 @@ nav {
   margin-top: 8rem;
   animation: fadeIn 3s;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
 
-  .avatar {
-    margin: 2rem;
-    border: 1rem solid chartreuse;
-    border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
+  h3 {
+    font-size: 4rem;
+  }
+  .aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 2rem;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 2rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      button {
+        margin-top: 2rem;
+        padding: 0.5rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      color: antiquewhite;
+    }
+    .medals {
+      color: antiquewhite;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      background-color: #5b87e5ad;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 2rem;
+      padding-top: 3rem;
+      div {
+        padding: 4rem;
+      }
+    }
   }
 }
 
