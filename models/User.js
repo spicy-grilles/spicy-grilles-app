@@ -7,12 +7,13 @@ const userSchema = new Schema({
   avatar: {
     type:String,
     required:true,
-    enum: ['avatONE', 'avatTWO', 'avatTHREE', 'avatFOUR', 'avatFIVE','upload IMG']
+    enum: ['avatONE', 'avatTWO', 'avatTHREE', 'avatFOUR', 'avatFIVE','upload IMG'],
+    default: 'avatONE'
   },
-  avatarPath: String,
+  avatarPath: {type: String, default: '/public/images/srirachi.png'},
   pointsGlobal: {type: Number, default: 0},
   pointsMatch: {type: Number, default: 0},
-  energyMatch: Number
+  energyMatch: {type: Number, default: 100}
 }, {
   timestamps: {
     createdAt: 'created_at',

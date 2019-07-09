@@ -26,6 +26,12 @@ router.get("/signup", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const avatar = req.body.avatar;
+  const avatarPath = req.body.avatarPath;
+  const pointsGlobal = req.body.pointsGlobal;
+  const pointsMatch = req.body.pointsMatch;
+  const energyMatch = req.body.energyMatch;
+
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
