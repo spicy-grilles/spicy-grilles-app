@@ -13,7 +13,7 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: '/profile',
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
@@ -26,6 +26,12 @@ router.get("/signup", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const avatar = req.body.avatar;
+  const avatarPath = req.body.avatarPath;
+  const pointsGlobal = req.body.pointsGlobal;
+  const pointsMatch = req.body.pointsMatch;
+  const energyMatch = req.body.energyMatch;
+
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
@@ -52,7 +58,7 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
     .then(() => {
-      res.redirect("/");
+      res.redirect("/auth/login");
     })
     .catch(err => {
       res.render("auth/signup", { message: "Something went wrong" });
