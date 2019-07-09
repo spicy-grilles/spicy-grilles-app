@@ -25,6 +25,7 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
   const avatar = req.body.avatar;
   const avatarPath = req.body.avatarPath;
@@ -48,7 +49,8 @@ router.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
-      password: hashPass,
+      email,
+      password: hashPass
     });
 
     newUser.save()
