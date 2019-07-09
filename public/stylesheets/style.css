@@ -121,11 +121,13 @@ nav ul {
     transform: scale(1.5, 1.5); }
 
 .profile {
+  margin-top: 8rem;
   animation: fadeIn 3s;
   display: flex;
   flex-direction: column;
   align-items: center; }
   .profile .avatar {
+    margin: 2rem;
     background-color: chartreuse;
     border: 1rem solid whitesmoke;
     border-radius: 50%;
