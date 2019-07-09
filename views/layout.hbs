@@ -15,9 +15,17 @@
   <nav>
     <ul>
       <li><a href="/"><img src="/images/Logo.png" alt="logo"></a></li>
+
+      {{#unless playerON}}
+      
       <li><a href="/auth/login">Login</a></li>
       <li><a href="/auth/signup">Signup</a></li>
+      {{/unless}}
+
+      {{#if playerON}}
+      
       <li><a href="/auth/logout">Logout</a></li>
+      {{/if}}
     </ul>
   </nav>
 
