@@ -42,7 +42,12 @@ router.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      avatar,
+      avatarPath,
+      pointsGlobal,
+      pointsMatch,
+      energyMatch
     });
 
     newUser.save()
