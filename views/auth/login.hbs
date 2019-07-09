@@ -1,22 +1,26 @@
 <section class="login">
-  <h2>Login Page</h2>
-  
+  <div>
+    <div>
+      <h2>Login Page</h2>
+    </div>
+
     <form action="/auth/login" method="POST" id="form-container">
 
-      <input id="username" type="text" name="username" placeholder="Username">
+      <div> <input id="username" type="text" name="username" placeholder="Username"></div>
 
-      <input id="password" type="password" name="password" placeholder="Password">
+      <div> <input id="password" type="password" name="password" placeholder="Password"></div>
 
       {{#if message }}
       <div class="error-message">{{ message }}</div>
       {{/if}}
 
       <button>Login</button>
-
-      <p class="account-message">
-        Don't have an account yet?
-        <a href="/auth/signup">Signup</a>
-      </p>
+      <div>
+        <p class="account-message">
+          Don't have an account yet?
+          <a href="/auth/signup">Signup</a>
+        </p>
+      </div>
     </form>
-  
+  </div>
 </section>
