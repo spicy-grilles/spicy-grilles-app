@@ -17,21 +17,25 @@
       <li><a href="/"><img src="/images/Logo.png" alt="logo"></a></li>
 
       {{#unless playerON}}
-      
+
       <li><a href="/auth/login">Login</a></li>
       <li><a href="/auth/signup">Signup</a></li>
       {{/unless}}
 
       {{#if playerON}}
-      
+
+      <li><a href="/lobby">Play</a></li>
       <li><a href="/ranking">Ranking</a></li>
-      <li><a href="/lobby">Lobby</a></li>
       <li><a href="/auth/logout">Logout</a></li>
       {{/if}}
     </ul>
   </nav>
 
   {{{body}}}
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo"></script>
+  <script src="/public/javascripts/main-interactive.js"></script>
 
   <script src="/javascripts/script.js"></script>
 </body>

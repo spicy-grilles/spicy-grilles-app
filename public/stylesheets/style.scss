@@ -204,6 +204,45 @@ nav {
   }
 }
 
+
+// Lobby
+.lobby {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 10rem;
+  
+  
+
+   a {
+    text-decoration: none;
+    margin-top: 5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    color: rgb(15, 171, 15);
+    text-align: center;
+    text-justify: auto;
+    transition: all 1s;
+    background-color: rgba(255, 255, 255, 0.762);
+    border-radius: 2rem;
+    padding: 2rem 5rem;
+  }
+  a:hover {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+
+.game {
+  
+#mapCanvas {
+  width: 90vw;
+  height: 90vh;
+}
+
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);

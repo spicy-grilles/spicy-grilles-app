@@ -165,6 +165,31 @@ nav ul {
       .profile .container .medals div {
         padding: 4rem; }
 
+.lobby {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 10rem; }
+  .lobby a {
+    text-decoration: none;
+    margin-top: 5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    color: #0fab0f;
+    text-align: center;
+    text-justify: auto;
+    transition: all 1s;
+    background-color: rgba(255, 255, 255, 0.762);
+    border-radius: 2rem;
+    padding: 2rem 5rem; }
+  .lobby a:hover {
+    transform: scale(1.5, 1.5); }
+
+.game #mapCanvas {
+  width: 90vw;
+  height: 90vh; }
+
 @keyframes rotate {
   from {
     transform: rotate(0deg); }
