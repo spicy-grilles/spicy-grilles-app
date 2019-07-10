@@ -1,16 +1,11 @@
-html {
-  max-zoom: 100vw;
-  min-zoom: 100vw; }
-
 body {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 3rem;
   background: linear-gradient(to bottom right, #36d1dc, #5b86e5);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  touch-action: none; }
 
 nav {
   box-sizing: border-box;
@@ -203,13 +198,29 @@ nav {
   max-height: 100vh;
   max-width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 5rem; }
   .game #mapCanvas {
     width: 90vw;
     height: 80vh;
     border: 0.2rem solid whitesmoke;
-    border-radius: 2rem; }
+    border-radius: 2rem;
+    z-index: 0; }
+
+.sp {
+  display: flex; }
+  .sp div {
+    padding: 1rem 0 1rem 20rem;
+    color: whitesmoke;
+    font-size: 1rem; }
+
+#energyCanvas {
+  background: gold;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 1; }
 
 @keyframes rotate {
   from {

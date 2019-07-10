@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const restSchema = new Schema({
+const restaurantSchema = new Schema({
   username: String,
   url: String,
   image: String,
   imagePath: String,
-  spicyPoints: {type: Number, enum: [1, 2, 3, 4, 5]},
+  spicyPoints: {type: Number, enum: [50, 100, 150, 200, 250]},
+  activeItem: {type: Boolean, default: true},
   item: {type: String, default: null}, //pendiente
+  
   location: { type: { type: String }, coordinates: [Number] }
 }, {
   timestamps: {
@@ -16,5 +18,8 @@ const restSchema = new Schema({
   }
 });
 
-const Rest = mongoose.model('Rest', restSchema);
-module.exports = Rest;
+restaurantSchema.index({ location: '2dsphere' });
+
+const Restaurant = mongoose.model('Restaurant', restaurantSchema);
+
+module.exports = Restaurant;
