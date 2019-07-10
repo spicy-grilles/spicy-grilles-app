@@ -207,6 +207,9 @@ nav {
     border: 0.2rem solid whitesmoke;
     border-radius: 2rem;
     z-index: 0; }
+  .game .progress {
+    width: 20rem;
+    margin: 1rem; }
 
 .sp {
   display: flex; }
@@ -221,6 +224,10 @@ nav {
   height: 200px;
   position: absolute;
   z-index: 1; }
+
+#sp {
+  width: 200px;
+  height: 200px; }
 
 @keyframes rotate {
   from {

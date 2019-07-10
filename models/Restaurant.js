@@ -7,8 +7,8 @@ const restaurantSchema = new Schema({
   image: String,
   imagePath: String,
   spicyPoints: {type: Number, enum: [50, 100, 150, 200, 250]},
-  activeItem: {type: Boolean, default: true},
-  item: {type: String, default: null}, //pendiente
+  activeItem: {type: Boolean, default: false},
+  item: {type: String}, //populate, cambiar con la learning
   
   location: { type: { type: String }, coordinates: [Number] }
 }, {
