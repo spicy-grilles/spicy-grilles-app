@@ -55,6 +55,8 @@ function initialize() {
       //infowindow.open(map, marker);
       var result = [event.latLng.lat(), event.latLng.lng()];
       transition(result);
+      //aki 
+      //axios
     });
   });
 
