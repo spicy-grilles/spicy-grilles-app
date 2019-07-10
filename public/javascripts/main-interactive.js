@@ -1,3 +1,5 @@
+
+
 var position = [40.44, -3.71];
 
 function initialize() {
@@ -9,7 +11,6 @@ function initialize() {
     disableDefaultUI: true, //DISABLE UI
     gestureHandling: "none", // DISABLE SCROLL
     zoomControl: false // DISABLE ZOOM
-    
   };
 
   map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
@@ -17,44 +18,54 @@ function initialize() {
   ////////// ICONS //////////
 
   var userIcon = {
-    url: "/images/userIcon.png", 
-    scaledSize: new google.maps.Size(50, 50), 
-    origin: new google.maps.Point(0, 0), 
-    anchor: new google.maps.Point(25, 25) 
+    url: "/images/userIcon.png",
+    scaledSize: new google.maps.Size(50, 50),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(25, 25)
   };
 
   var restaurantIcon = {
-    url: "/images/restaurantIcon.png", 
-    scaledSize: new google.maps.Size(50, 50), 
-    origin: new google.maps.Point(0, 0), 
-    anchor: new google.maps.Point(25, 25) 
-  }
+    url: "/images/restaurantIcon.png",
+    scaledSize: new google.maps.Size(50, 50),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(25, 25)
+  };
 
   //////////////
+  //Restaurants Localitations
 
   var restaurants = [
-    ['Bondi Beach', -33.890542, 151.274856],
-    ['Coogee Beach', -33.923036, 151.259052],
-    ['Cronulla Beach', -34.028249, 151.157507],
-    ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-    ['Maroubra Beach', -33.950198, 151.259302, 1]
+    ["Bondi", 3, 23],
+    ["Coogee", 48, 11],
+    ["Cronulla", 54, -69],
+    ["Manly", -9, -60],
+    ["Maroubra", 60, 60]
   ];
 
-  for (i = 0; i < restaurants.length; i++) { 
-      restaurant = new google.maps.Marker({
-          position: new google.maps.LatLng(restaurants[i][1], restaurants[i][2]),
-          map: map
-        });
-    }
-    
-    userMarker = new google.maps.Marker({
-      position: latlng,
+  restaurants.forEach(restaurant => {
+    each = new google.maps.Marker({
+      position: new google.maps.LatLng(restaurant[1], restaurant[2]),
       map: map,
-      icon: userIcon, //Select User Icon
-      title: "Latitude:" + position[0] + " | Longitude:" + position[1]
+      icon: restaurantIcon,
+      // label: restaurants[i][0],
+      title: restaurant[0]
     });
-    
-  google.maps.event.addListener(map, "click", function(event) {
+
+    each.addListener("click", event => {
+      //infowindow.open(map, marker);
+      var result = [event.latLng.lat(), event.latLng.lng()];
+      transition(result);
+    });
+  });
+
+  userMarker = new google.maps.Marker({
+    position: latlng,
+    map: map,
+    icon: userIcon, //Select User Icon
+    title: "Latitude:" + position[0] + " | Longitude:" + position[1]
+  });
+
+  google.maps.event.addListener(map, "click", event => {
     var result = [event.latLng.lat(), event.latLng.lng()];
     transition(result);
   });
@@ -80,11 +91,12 @@ function moveMarker() {
   position[0] += deltaLat;
   position[1] += deltaLng;
   var latlng = new google.maps.LatLng(position[0], position[1]);
-  userMarker.setTitle("Latitude:" + position[0] + " | Longitude:" + position[1]);
+  userMarker.setTitle(
+    "Latitude:" + position[0] + " | Longitude:" + position[1]
+  );
   userMarker.setPosition(latlng);
   if (i != numDeltas) {
     i++;
     setTimeout(moveMarker, delay);
   }
 }
-
