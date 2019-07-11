@@ -2,22 +2,27 @@
 
   <form id="timeButton" action="/play" method="GET">
 
-  <a type="submit" href="/play"/>P L A Y</a>
+    <a type="submit" href="/play" />P L A Y</a>
 
   </form>
 
-<ul>
-{{#each player}}
+  <ul>
+    {{#each player}}
 
-{{!-- {{#if req.user_id = this.user_id}} --}}
+    {{!-- {{#if req.user_id = this.user_id}} --}}
 
-<li>{{this.username}} <button class="ready">Ready!</button></li>
+    <li>
+      {{this.username}}
+      <form action="/addPlayer" method="POST">
+        <button type="submit" class="ready">Ready!</button>
+      </form>
+    </li>
 
-{{!-- {{/if}} --}}
+    {{!-- {{/if}} --}}
 
-{{/each}}
-</ul>
+    {{/each}}
+  </ul>
 
-<script src="/javascripts/timeButton.js"></script>
+  <script src="/javascripts/timeButton.js"></script>
 
-</section>  
+</section>
