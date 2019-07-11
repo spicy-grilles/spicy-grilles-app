@@ -44,32 +44,34 @@ router.get("/about-us", (req, res) => {
 });
 
 router.post("/addPlayer", (req, res) => {
-  console.log("patata")
-  console.log(req.user._id)
+  //console.log("patata");
+  //console.log(req.user._id);
   const startTime = Game.startTime;
   const finishTime = Game.finishTime;
-  
+
   const newGame = new Game({
     startTime,
     finishTime
   });
 
   newGame
-  .save()
-  .then((gameSession) => {
-    gameSession.playersON.push(req.user._id)
-    console.log(req.game._id)
-    console.log(req.user._id)
-    Game.findByIdAndUpdate(this.id, { playersON: gameSession.playersON })
-    res.redirect("/play");
-  })
+    .save()
+    .then(gameSession => {
+      gameSession.playersON.push(req.user._id);
+      console.log(gameSession._id);
+      console.log(gameSession.playersON);
+      Game.findByIdAndUpdate(
+        gameSession._id,
+         {playersON:gameSession.playersON} ,
+        { new: true }
+      );
+      
+      res.redirect("/play");
+    })
     .catch(err => {
       console.log("Something went wrong ON THE PLAY");
     });
-  
 
-
-  
   //req.game.playersON.push(req.user._id)
 });
 
@@ -104,8 +106,6 @@ router.get("/play", (req, res) => {
     res.render("play", user);
   });
 });
-
-
 
 // router.post("/restaurants", (req,res) => {
 //   const username = req.body.username;
