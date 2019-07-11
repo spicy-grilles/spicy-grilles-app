@@ -3,10 +3,20 @@
   <form id="timeButton" action="/play" method="GET">
 
   <a type="submit" href="/play"/>P L A Y</a>
-  
+
   </form>
 
+<ul>
+{{#each player}}
 
+{{!-- {{#if req.user_id = this.user_id}} --}}
+
+<li>{{this.username}} <button class="ready">Ready!</button></li>
+
+{{!-- {{/if}} --}}
+
+{{/each}}
+</ul>
 
 <script src="/javascripts/timeButton.js"></script>
 

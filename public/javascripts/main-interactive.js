@@ -1,6 +1,6 @@
 
 // Tiempo global del juego
-var gameDurationInSeconds = 5000;
+var gameDurationInSeconds = 10;
 
 var finish = moment()
   .add(gameDurationInSeconds, "seconds")

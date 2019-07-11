@@ -19,7 +19,8 @@ router.get("/profile", (req, res) => {
   });
 });
 
-router.post("/profile", upload.single("photo"), (req, res, next) => {
+router.post("/profile", upload.single("picture"), (req, res, next) => {
+  console.log(req.file)
   User.findByIdAndUpdate({
     avatarPath: `/uploads/${req.file.filename}`
   }).then(newAvatarCreated => {
@@ -32,7 +33,11 @@ router.get("/ranking", (req, res) => {
 });
 
 router.get("/lobby", (req, res) => {
-  res.render("lobby");
+  User.find()
+  .then(player => {
+    console.log(player)
+    res.render("lobby", {player});
+  })
 });
 
 router.get("/about-us", (req, res) => {
@@ -68,6 +73,7 @@ router.get("/play", (req, res) => {
   Restaurant.find()
   Item.find()
   User.findById(req.user._id).then(user => {
+
     //aquí hay que hacer lo de que haya 4 users conectados
     res.render("play", user);
   });
@@ -143,5 +149,10 @@ router.get("/updatePoints",(req,res) => {
     })
     
   })
+
+
+
+
+
 
 module.exports = router;

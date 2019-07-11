@@ -5,7 +5,8 @@ const gameSchema = new Schema(
   {
     //botón de preparado para meter los players en el array y botón de jugar cuando estén todos en el array
     startTime: String,
-    finishTime: String
+    finishTime: String,
+    players:{type: Schema.Types.ObjectId, ref: "User"}
   },
   {
     timestamps: {
