@@ -125,7 +125,7 @@ nav {
     transform: scale(1.5, 1.5); }
 
 .profile {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   margin-top: -5rem;
   animation: fadeIn 3s;
@@ -155,7 +155,9 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    height: 20rem;
+    margin-top: 20rem; }
     .profile .container h3 {
       color: antiquewhite; }
     .profile .container .medals {
@@ -164,21 +166,21 @@ nav {
       margin-top: 2rem;
       text-align: center;
       background-color: #5b87e5ad;
-      width: 15rem;
-      height: 15rem;
       border-radius: 2rem;
       padding-top: 3rem; }
       .profile .container .medals div {
-        padding: 4rem; }
+        padding: 7rem; }
 
 .lobby {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   margin-top: 10rem; }
+  .lobby .ready {
+    background: transparent; }
   .lobby form {
     margin-top: 5rem;
     font-size: 3rem;
@@ -203,7 +205,7 @@ nav {
         margin-left: 2rem;
         padding: 0.5rem;
         border-radius: 2rem;
-        opacity: .7; }
+        opacity: 0.7; }
         .lobby ul li button:hover {
           opacity: 1; }
 

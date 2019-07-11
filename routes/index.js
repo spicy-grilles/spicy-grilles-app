@@ -43,15 +43,34 @@ router.get("/about-us", (req, res) => {
   res.render("about-us");
 });
 
-
-router.get("/addPlayer", (req, res) => {
-  console.log("naranjas")
-});
-
-
 router.post("/addPlayer", (req, res) => {
-  console.log("patata");
-  console.log(req.body.user._id);
+  console.log("patata")
+  console.log(req.user._id)
+  const startTime = Game.startTime;
+  const finishTime = Game.finishTime;
+  
+  const newGame = new Game({
+    startTime,
+    finishTime
+  });
+
+  newGame
+  .save()
+  .then((gameSession) => {
+    gameSession.playersON.push(req.user._id)
+    console.log(req.game._id)
+    console.log(req.user._id)
+    Game.findByIdAndUpdate(this.id, { playersON: gameSession.playersON })
+    res.redirect("/play");
+  })
+    .catch(err => {
+      console.log("Something went wrong ON THE PLAY");
+    });
+  
+
+
+  
+  //req.game.playersON.push(req.user._id)
 });
 
 // OTRA VERSIÓN !!!!
@@ -86,26 +105,7 @@ router.get("/play", (req, res) => {
   });
 });
 
-router.post("/play", (req, res, next) => {
-  //users?
 
-  const startTime = Game.startTime;
-  const finishTime = Game.finishTime;
-
-  const newGame = new Game({
-    startTime,
-    finishTime
-  });
-
-  newGame
-    .save()
-    .then(() => {
-      res.redirect("/play");
-    })
-    .catch(err => {
-      console.log("Something went wrong ON THE PLAY");
-    });
-});
 
 // router.post("/restaurants", (req,res) => {
 //   const username = req.body.username;

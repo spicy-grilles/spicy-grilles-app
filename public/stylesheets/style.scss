@@ -152,7 +152,7 @@ nav {
 
 //Profile
 .profile {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 
   margin-top: -5rem;
@@ -191,6 +191,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 20rem;
+    margin-top: 20rem;
 
     h3 {
       color: antiquewhite;
@@ -201,12 +203,10 @@ nav {
       margin-top: 2rem;
       text-align: center;
       background-color: #5b87e5ad;
-      width: 15rem;
-      height: 15rem;
       border-radius: 2rem;
       padding-top: 3rem;
       div {
-        padding: 4rem;
+        padding: 7rem;
       }
     }
   }
@@ -214,21 +214,22 @@ nav {
 
 // Lobby
 .lobby {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   margin-top: 10rem;
-
+.ready {
+  background: transparent;
+}
   form {
-
     a {
       text-decoration: none;
       color: rgb(15, 171, 15);
     }
-
+    
     margin-top: 5rem;
     font-size: 3rem;
     text-align: center;
@@ -249,12 +250,12 @@ nav {
     font-size: 1.5rem;
     li {
       margin-top: 2rem;
-    
+
       button {
         margin-left: 2rem;
         padding: 0.5rem;
         border-radius: 2rem;
-        opacity: .7;
+        opacity: 0.7;
         &:hover {
           opacity: 1;
         }
@@ -282,7 +283,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     div {
       padding: 1rem;
       color: whitesmoke;

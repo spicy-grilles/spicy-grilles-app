@@ -1,27 +1,19 @@
 <section class="lobby">
 
+<div>
   <form id="timeButton" action="/play" method="GET">
-
     <a type="submit" href="/play" />P L A Y</a>
-
   </form>
-
-  <ul>
-    {{#each player}}
-
-    {{!-- {{#if req.user_id = this.user_id}} --}}
-
-    <li>
-      {{this.username}}
+</div>
+  
+   
+     <div class="ready">
       <form action="/addPlayer" method="POST">
-        <button type="submit" class="ready">Ready!</button>
+        <button type="submit" >Ready!</button>
       </form>
-    </li>
+   </div>
 
-    {{!-- {{/if}} --}}
-
-    {{/each}}
-  </ul>
+   
 
   <script src="/javascripts/timeButton.js"></script>
 

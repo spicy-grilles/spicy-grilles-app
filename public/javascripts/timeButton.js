@@ -20,19 +20,7 @@
 //   }, 1000);
 // };
 
-let readyBtn = document.querySelectorAll(".ready");
+//let readyBtn = document.querySelector(".ready");
 
 
-
-readyBtn[0].addEventListener ("click", () => {
-  readyBtn[0].remove()
-})
-
-readyBtn[1].addEventListener ("click", () => {
-  readyBtn[1].remove()
-})
-
-readyBtn[2].addEventListener ("click", () => {
-  readyBtn[2].remove()
-})
 
