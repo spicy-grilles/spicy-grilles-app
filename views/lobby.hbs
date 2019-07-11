@@ -1,10 +1,20 @@
 <section class="lobby">
 
-  <a href="/play">P L A Y</a>
+<div>
+  <form id="timeButton" action="/play" method="GET">
+    <a type="submit" href="/play" />P L A Y</a>
+  </form>
+</div>
+  
+   
+     <div class="ready">
+      <form action="/addPlayer" method="POST">
+        <button type="submit" >Ready!</button>
+      </form>
+   </div>
 
-  <a href="#">Invite your friends</a>
+   
 
-  <a href="#">How To</a>
-
+  <script src="/javascripts/timeButton.js"></script>
 
 </section>

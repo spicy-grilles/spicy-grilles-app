@@ -1,48 +1,75 @@
 
+// Tiempo global del juego
+var gameDurationInSeconds = 10;
+
+var finish = moment()
+  .add(gameDurationInSeconds, "seconds")
+  .format("LTS");
+
+const intervalID = setInterval(() => {
+  const currentTime = moment().format("LTS");
+
+  if (finish === currentTime) {
+    console.log("game over");
+    
+    clearInterval(intervalID);
+    //aquí reset etc
+  } else
+    console.log(
+      "todavia no es el fin del juego " + currentTime + " **** " + finish
+    );
+}, 1000);
 
 
+////////////////
+
+let finishButton = document.querySelector("#finish").onclick = function() {
+  let turnDuration = 60
+}
 
 
- let points = document.querySelector("#points").innerHTML
+//////Tiempo del turno jugador 
 
+//  var players = [player1, player2, player3, player4]
 
-// let button = document.querySelector("#finish")
+//  var currentTurn = 0
 
-// console.log(points)
+//  var repetirTurno = false;
 
+//  var saltarTurno = false;
 
+//  console.log("le toca a: " + players[currentTurn])
 
-// button.addEventListener("click", event=> {
-//   points = +points
-//   points += 5
-//   console.log(points)
-
-//   axios
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// if(restaurantItemExplode) {
+  
+  //   currentTurn++
+  
+  //  }
+  
+  
+  //    if (currentTurn >= players.length)	currentTurn = 0
+  
+  //    console.log("le toca a: " + players[currentTurn])
+  //  ;
+  
+  
+  
+  
+  // let button = document.querySelector("#finish")
+  
+  // console.log(points)
+  
+  
+  
+  // button.addEventListener("click", event=> {
+    //   points = +points
+    //   points += 5
+    //   console.log(points)
+    
+    //   axios
+    
+    // })
+    let points = document.querySelector("#points").innerHTML
 
 var position = [40.44, -3.71];
 

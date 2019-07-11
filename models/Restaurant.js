@@ -9,7 +9,7 @@ const restaurantSchema = new Schema(
     imagePath: String,
     spicyPoints: { type: Number, enum: [50, 100, 150, 200, 250] },
     activeItem: { type: Boolean, default: false },
-    item: { type: String }, //populate, cambiar con la learning
+    item: {type: Schema.Types.ObjectId, ref: "Item"}, //populate, cambiar con la learning
 
     location: { type: { type: String }, coordinates: [Number] }
   },
