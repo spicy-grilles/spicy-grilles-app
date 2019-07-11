@@ -1,5 +1,49 @@
 
 
+
+
+
+ let points = document.querySelector("#points").innerHTML
+
+
+// let button = document.querySelector("#finish")
+
+// console.log(points)
+
+
+
+// button.addEventListener("click", event=> {
+//   points = +points
+//   points += 5
+//   console.log(points)
+
+//   axios
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var position = [40.44, -3.71];
 
 function initialize() {
@@ -55,8 +99,14 @@ function initialize() {
       //infowindow.open(map, marker);
       var result = [event.latLng.lat(), event.latLng.lng()];
       transition(result);
-      //aki 
-      //axios
+      
+      axios
+      .get('/updatePoints')
+      .then((res) => {
+        console.log(res.data.data.pointsMatch)
+        document.querySelector("#points").innerHTML = res.data.data.pointsMatch
+      })
+      .catch((err)=> console.log("error " + err))
     });
   });
 

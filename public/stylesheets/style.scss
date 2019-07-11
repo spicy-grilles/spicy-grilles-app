@@ -36,7 +36,10 @@ nav {
         &:hover {
           opacity: 1;
         }
+  
       }
+
+      
     }
   }
 }
@@ -261,6 +264,11 @@ nav {
   z-index: 0;
   
 }
+.progress {
+  width: 20rem;
+  margin: 1rem;
+}
+
 
 }
 
@@ -281,6 +289,10 @@ nav {
   z-index: 1;
 }
 
+#sp {
+  width: 200px;
+  height: 200px;
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg);

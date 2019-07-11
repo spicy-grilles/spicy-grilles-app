@@ -46,4 +46,15 @@ router.get("/play", (req, res) => {
   });
 });
 
+router.get("/updatePoints",(req,res) => {
+  Restaurant.findById("5d260e7a15fe533cac1f43d4")
+  .then(restaurant =>{
+      User.findByIdAndUpdate(req.user._id, {$set:{pointsMatch: req.user.pointsMatch + restaurant.spicyPoints}}, {new:true})
+      .then(user =>{
+        res.json({data:user})
+      })
+    })
+    
+  })
+
 module.exports = router;

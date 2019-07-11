@@ -14,7 +14,7 @@
 
   <nav>
     <ul>
-      <li><a href="/"><img src="/images/Logo.png" alt="logo"></a></li>
+      <a href="/"><img class="logo"src="/images/Logo.png" alt="logo"></a></li>
 
       {{#unless playerON}}
 
@@ -23,7 +23,7 @@
       {{/unless}}
 
       {{#if playerON}}
-
+      <li><a href="/profile">Profile</a></li>
       <li><a href="/lobby">Play</a></li>
       <li><a href="/ranking">Ranking</a></li>
       <li><a href="/auth/logout">Logout</a></li>
@@ -33,8 +33,10 @@
 
   {{{body}}}
 
-
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <script src="/javascripts/script.js"></script>
+
 </body>
 
 </html>
