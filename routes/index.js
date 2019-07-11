@@ -39,6 +39,30 @@ router.get("/about-us", (req, res) => {
   res.render("about-us");
 });
 
+// OTRA VERSIÓN !!!!
+// router.get("/play", (req, res) => {
+//   Game.findById()
+//   Restaurant.find()
+//   Item.find()
+//   User.findById(req.user._id).then(user => {
+
+//     while (maxUsers <= 4) {
+//     maxUsers = arrayUsers.push(user.data._id);
+//     }
+//       .then(user =>{
+//         res.render("play", user))
+//       .catch(console.log("Partida llena"))
+//       })
+
+//     //aquí hay que hacer lo de que haya 4 users conectados
+    
+//   });
+  
+// });
+// ********
+
+
+
 router.get("/play", (req, res) => {
   Game.findById()
   Restaurant.find()
@@ -70,6 +94,43 @@ router.post("/play", (req, res, next) => {
     })
   });
 
+// router.post("/restaurants", (req,res) => {
+//   const username = req.body.username;
+//   const url = req.body.url;
+//   const image = req.body.image;
+//   const imagePath = req.body.imagePath;
+//   const spicyPoints = req.body.spicyPoints;
+//   const activeItem = req.body.activeItem;
+//   const item = req.body.item;
+//   const location = req.body.location;
+
+//     const newRestaurant = new Restaurant({
+//       username,
+//       url,
+//       image,
+//       imagePath,
+//       spicyPoints,
+//       activeItem,
+//       item,
+//       location
+//     });
+
+//     newRestaurant.save()
+//     .then((element) => {
+//       res.send({newRestaurant: element});
+//     })
+//     .catch(err => {
+//       console.log("Something went wrong ON THE PLAY");
+// })
+// })
+
+router.get("/restaurants",(req,res) => {
+  Restaurant.find()
+  .then(restaurant =>{
+       res.json({data:restaurant})
+      })
+  }) //ESTO?? ME LO HE INVENTADO O ESTÁ BIEN?
+    
 
 
 router.get("/updatePoints",(req,res) => {

@@ -178,20 +178,20 @@ nav {
   text-align: center;
   align-items: center;
   margin-top: 10rem; }
-  .lobby a {
-    text-decoration: none;
+  .lobby form {
     margin-top: 5rem;
-    text-decoration: none;
     font-size: 3rem;
-    color: #0fab0f;
     text-align: center;
     text-justify: auto;
     transition: all 1s;
     background-color: rgba(255, 255, 255, 0.762);
     border-radius: 2rem;
     padding: 2rem 5rem; }
-  .lobby a:hover {
-    transform: scale(1.5, 1.5); }
+    .lobby form a {
+      text-decoration: none;
+      color: #0fab0f; }
+    .lobby form:hover {
+      transform: scale(1.5, 1.5); }
 
 .game {
   width: 100%;
@@ -217,6 +217,26 @@ nav {
       font-size: 1rem; }
   .game #finish {
     margin: 1rem 0 0 2rem; }
+
+.ranking {
+  width: 100vw;
+  height: 100vh;
+  color: whitesmoke;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .ranking div {
+    margin-top: 2rem;
+    border: 0.5rem solid wheat;
+    border-radius: 2rem;
+    width: 10rem;
+    text-align: center;
+    padding: 1rem; }
+    .ranking div:hover {
+      transform: scale(1.5, 1.5); }
 
 @keyframes rotate {
   from {

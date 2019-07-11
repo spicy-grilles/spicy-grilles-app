@@ -21,17 +21,11 @@ const intervalID = setInterval(() => {
 }, 1000);
 
 
-
 ////////////////
 
 let finishButton = document.querySelector("#finish").onclick = function() {
   let turnDuration = 60
 }
-
-
-
-
-
 
 
 //////Tiempo del turno jugador 
