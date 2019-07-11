@@ -5,6 +5,7 @@ const upload = multer({ dest: "./public/uploads/" }); //aquí guardará el usuar
 const User = require("../models/User");
 const Restaurant = require("../models/Restaurant")
 const Item = require("../models/Restaurant")
+const Game = require("../models/Game")
 const bcrypt = require("bcrypt");
 
 /* GET home page */
@@ -39,12 +40,37 @@ router.get("/about-us", (req, res) => {
 });
 
 router.get("/play", (req, res) => {
+  Game.findById()
   Restaurant.find()
   Item.find()
   User.findById(req.user._id).then(user => {
+    //aquí hay que hacer lo de que haya 4 users conectados
     res.render("play", user);
   });
+  
 });
+
+router.post("/play", (req, res, next) => {
+    //users?
+
+    const startTime = Game.startTime;
+    const finishTime = Game.finishTime;
+
+    const newGame = new Game({
+      startTime,
+      finishTime,
+    });
+
+    newGame.save()
+    .then(() => {
+      res.redirect("/play");
+    })
+    .catch(err => {
+      console.log("Something went wrong ON THE PLAY");
+    })
+  });
+
+
 
 router.get("/updatePoints",(req,res) => {
   Restaurant.findById("5d260e7a15fe533cac1f43d4")

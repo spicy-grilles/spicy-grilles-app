@@ -6,13 +6,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
-  touch-action: none
+  touch-action: none;
+
 }
 
 // Nav Bar
 nav {
   box-sizing: border-box;
-  max-width: 100vw;
+  
   ul {
     display: flex;
     justify-content: flex-end;
@@ -36,10 +37,7 @@ nav {
         &:hover {
           opacity: 1;
         }
-  
       }
-
-      
     }
   }
 }
@@ -47,8 +45,8 @@ nav {
 // Login && SignUp Page
 .login,
 .signup {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;
 
   animation: fadeIn 3s;
   transition: all 3s;
@@ -108,8 +106,8 @@ nav {
 
 //Home Page
 .home {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;;
 
   animation: fadeIn 3s;
   padding: 2rem;
@@ -152,12 +150,11 @@ nav {
 }
 
 //Profile
-
 .profile {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;;
 
-  margin-top: 8rem;
+  margin-top: -5rem;
   animation: fadeIn 3s;
   display: flex;
   justify-content: space-around;
@@ -214,20 +211,17 @@ nav {
   }
 }
 
-
 // Lobby
 .lobby {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   margin-top: 10rem;
-  
-  
 
-   a {
+  a {
     text-decoration: none;
     margin-top: 5rem;
     text-decoration: none;
@@ -246,53 +240,40 @@ nav {
 }
 
 
-
-
+// Play (Map)
 .game {
-  max-height: 100vh;
-  max-width: 100vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 5rem;
 
-#mapCanvas {
-  width: 90vw;
-  height: 80vh;
-  border: 0.2rem solid whitesmoke;
-  border-radius: 2rem;
-  z-index: 0;
-  
-}
-.progress {
-  width: 20rem;
-  margin: 1rem;
-}
+  #mapCanvas {
+    width: 90vw;
+    height: 80vh;
+    border: 0.2rem solid whitesmoke;
+    border-radius: 2rem;
+    z-index: 0;
+  }
+  .progress {
+    width: 20rem;
+    margin: 1rem;
+  }
+  .sp {
+    display: flex;
+    div {
+      padding: 1rem 0 1rem 20rem;
+      color: whitesmoke;
+      font-size: 1rem;
+    }
+  }
 
-
-}
-
-.sp {
-  display: flex;
-  div {
-    padding: 1rem 0 1rem 20rem;
-    color: whitesmoke;
-    font-size: 1rem;
+  #finish {
+    margin: 1rem 0 0 2rem;
   }
 }
 
-#energyCanvas {
-  background: gold;
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  z-index: 1;
-}
-
-#sp {
-  width: 200px;
-  height: 200px;
-}
 @keyframes rotate {
   from {
     transform: rotate(0deg);

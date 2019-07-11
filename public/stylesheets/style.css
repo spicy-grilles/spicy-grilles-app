@@ -8,8 +8,7 @@ body {
   touch-action: none; }
 
 nav {
-  box-sizing: border-box;
-  max-width: 100vw; }
+  box-sizing: border-box; }
   nav ul {
     display: flex;
     justify-content: flex-end; }
@@ -34,8 +33,8 @@ nav {
 
 .login,
 .signup {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;
   animation: fadeIn 3s;
   transition: all 3s;
   padding: 6rem; }
@@ -91,8 +90,8 @@ nav {
         color: white; }
 
 .home {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;
   animation: fadeIn 3s;
   padding: 2rem;
   display: flex;
@@ -125,9 +124,9 @@ nav {
     transform: scale(1.5, 1.5); }
 
 .profile {
-  max-width: 100vw;
-  max-height: 100vh;
-  margin-top: 8rem;
+  width: 100%;
+  height: 100vh;
+  margin-top: -5rem;
   animation: fadeIn 3s;
   display: flex;
   justify-content: space-around; }
@@ -172,8 +171,8 @@ nav {
         padding: 4rem; }
 
 .lobby {
-  max-width: 100vw;
-  max-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -195,8 +194,8 @@ nav {
     transform: scale(1.5, 1.5); }
 
 .game {
-  max-height: 100vh;
-  max-width: 100vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,24 +209,14 @@ nav {
   .game .progress {
     width: 20rem;
     margin: 1rem; }
-
-.sp {
-  display: flex; }
-  .sp div {
-    padding: 1rem 0 1rem 20rem;
-    color: whitesmoke;
-    font-size: 1rem; }
-
-#energyCanvas {
-  background: gold;
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  z-index: 1; }
-
-#sp {
-  width: 200px;
-  height: 200px; }
+  .game .sp {
+    display: flex; }
+    .game .sp div {
+      padding: 1rem 0 1rem 20rem;
+      color: whitesmoke;
+      font-size: 1rem; }
+  .game #finish {
+    margin: 1rem 0 0 2rem; }
 
 @keyframes rotate {
   from {
