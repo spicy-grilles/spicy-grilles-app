@@ -4,8 +4,8 @@
 body {
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
-  padding: 3rem;  
-  background: linear-gradient(to bottom right, #B5AC49, #3ca55c); 
+  padding: 3rem;
+  background: linear-gradient(to bottom right, #b5ac49, #3ca55c);
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
@@ -29,9 +29,9 @@ nav {
       text-decoration: none;
       color: whitesmoke;
       font-size: 1.3rem;
-      opacity: .8;
+      opacity: 0.8;
       &:hover {
-        opacity: 1
+        opacity: 1;
       }
 
       img {
@@ -64,8 +64,7 @@ nav {
 
   //animation: fadeIn 3s;
   animation: appear 3s;
-  
-  
+
   h2 {
     margin: 2.5em 0;
     font-size: 2rem;
@@ -110,12 +109,12 @@ nav {
     p {
       margin: 1.2rem 0;
       font-size: 1rem;
-      color: rgba(255, 255, 255, .6);
+      color: rgba(255, 255, 255, 0.6);
       a {
         text-decoration: none;
-        color: rgba(255, 255, 255, .8);
+        color: rgba(255, 255, 255, 0.8);
         &:hover {
-          color: rgba(255, 255, 255, 1)
+          color: rgba(255, 255, 255, 1);
         }
       }
     }
@@ -362,9 +361,19 @@ nav {
 }
 
 @keyframes wiggle {
-  0% {transform: rotate(10deg);}
-  25% {transform: rotate(-10deg);}
-  50% {transform: rotate(20deg);}
-  75% {transform: rotate(-5deg);}
-  100% {transform: rotate(0deg);}
+  0% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

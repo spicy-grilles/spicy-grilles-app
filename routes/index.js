@@ -59,21 +59,24 @@ router.post("/addPlayer", (req, res) => {
 
     Game.find({})
   .then(games => {
-    if(games.length >0) {
+    if(games.length > 0) {
 
       Game.findOne({active:true})
       .then((gameFound) => {
 
         console.log(gameFound)
   
-        if (gameFound.active == true){
+        if (gameFound.active == true) {
           
-           gameFound.playersON.push(req.user._id);
+          console.log(gameFound)
 
-           console.log(gameFound.playersON.push(req.user._id))
+           var totalPlayer = gameFound.playersON.push(req.user._id);
+
+           console.log(totalPlayer)
             
-            if (gameFound.playersON.push(req.user._id) >= 4) {
+            if (+totalPlayer >= 4) {
               Game.findByIdAndUpdate(
+                
                 gameFound._id,
                 {$addToSet:{playersON:gameFound.playersON}, $set:{active:false}} , 
                 { new: true }
@@ -85,6 +88,7 @@ router.post("/addPlayer", (req, res) => {
             } 
   
             else {
+              console.log("estoy pasando pormenor de 4")
             Game.findByIdAndUpdate(
               gameFound._id,
               {$addToSet:{playersON:gameFound.playersON}, $set:{active:true}} , 
@@ -122,6 +126,26 @@ router.post("/addPlayer", (req, res) => {
         } 
   
       })
+      .catch(
+        newGame
+        .save()
+        .then(gameSession => {
+          gameSession.playersON.push(req.user._id);
+          
+          Game.findByIdAndUpdate(
+            gameSession._id,
+            {$addToSet:{playersON:gameSession.playersON}, $set:{active:true}} , 
+            { new: true }
+          )
+          .then(
+            res.redirect("/play")
+          ) 
+          
+        })
+        .catch(err => {
+          console.log("Something went wrong ON THE PLAY2");
+        })
+      )
   
     }
     else{
@@ -141,7 +165,7 @@ router.post("/addPlayer", (req, res) => {
             
           })
           .catch(err => {
-            console.log("Something went wrong ON THE PLAY");
+            console.log("Something went wrong ON THE PLAY OF NEW GAME");
           })
     }
   })
