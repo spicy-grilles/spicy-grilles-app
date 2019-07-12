@@ -87,7 +87,7 @@ router.post("/addPlayer", (req, res) => {
       
             } 
   
-            else {
+            else { //aqui
               console.log("estoy pasando pormenor de 4")
             Game.findByIdAndUpdate(
               gameFound._id,
@@ -104,29 +104,15 @@ router.post("/addPlayer", (req, res) => {
         }
         
         else { 
-          newGame
-          .save()
-          .then(gameSession => {
-            gameSession.playersON.push(req.user._id);
-            
-            Game.findByIdAndUpdate(
-              gameSession._id,
-              {$addToSet:{playersON:gameSession.playersON}, $set:{active:true}} , 
-              { new: true }
-            )
-            .then(
-              res.redirect("/play")
-            ) 
-            
-          })
-          .catch(err => {
-            console.log("Something went wrong ON THE PLAY");
-          })
+          
+            console.log("Something went wrong between active/notactive");
+          
       
         } 
   
       })
       .catch(
+        console.log("Something went wrong on the PLAY of gameFound active"),
         newGame
         .save()
         .then(gameSession => {
@@ -143,7 +129,7 @@ router.post("/addPlayer", (req, res) => {
           
         })
         .catch(err => {
-          console.log("Something went wrong ON THE PLAY2");
+          console.log("Something went wrong ON THE PLAY OF ANOTHER NEW GAME");
         })
       )
   

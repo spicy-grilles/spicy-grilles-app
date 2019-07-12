@@ -15,12 +15,9 @@
     <div>
       <ol>
         
-        
-        <li>Pepe</li>
-        <li>Pepa</li>
-        <li>Pepi</li>
-        
-        
+        {{#each playersInSession}}
+        <li>{{this.playerUsername}}</li>
+         {{/each}}
 
       </ol>
     </div>
