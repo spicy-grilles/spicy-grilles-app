@@ -49,10 +49,12 @@ router.post("/addPlayer", (req, res) => {
 
   const startTime = Game.startTime;
   const finishTime = Game.finishTime;
+  const active = Game.active;
 
   const newGame = new Game({
     startTime,
-    finishTime
+    finishTime,
+    active
   });
 
     Game.find({})
@@ -70,22 +72,22 @@ router.post("/addPlayer", (req, res) => {
 
            console.log(gameFound.playersON.push(req.user._id))
             
-            if (gameFound.playersON.push(req.user._id) == 4) {
+            if (gameFound.playersON.push(req.user._id) >= 4) {
               Game.findByIdAndUpdate(
                 gameFound._id,
                 {$addToSet:{playersON:gameFound.playersON}, $set:{active:false}} , 
                 { new: true }
               )
               .then(
-                res.redirect("/play")
+              res.redirect("/play") 
               ) 
       
-            }
+            } 
   
             else {
             Game.findByIdAndUpdate(
               gameFound._id,
-              {$addToSet:{playersON:gameFound.playersON}} , 
+              {$addToSet:{playersON:gameFound.playersON}, $set:{active:true}} , 
               { new: true }
               )
               .then(
