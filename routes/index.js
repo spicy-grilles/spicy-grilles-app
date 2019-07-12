@@ -46,6 +46,7 @@ router.get("/about-us", (req, res) => {
 router.post("/addPlayer", (req, res) => {
   //console.log("patata");
   //console.log(req.user._id);
+
   const startTime = Game.startTime;
   const finishTime = Game.finishTime;
 
@@ -54,101 +55,96 @@ router.post("/addPlayer", (req, res) => {
     finishTime
   });
 
-  if (Game) {
+    Game.find({})
+  .then(games => {
+    if(games.length >0) {
 
-    Game.findOne({active:true})
-    .then((gameFound) => {
+      Game.findOne({active:true})
+      .then((gameFound) => {
 
-      if (gameFound.active == true){
-        console.log("la sesión está activa!!!!")
         console.log(gameFound)
-        console.log(req.user._id)
-        console.log(gameFound.playersON.push(req.user._id))
-        
-          gameFound.playersON.push(req.user._id);
-          console.log(gameFound._id);
-          console.log(gameFound.playersON);
+  
+        if (gameFound.active == true){
           
-          if (gameFound.playersON.push(req.user._id) == 4) {
+           gameFound.playersON.push(req.user._id);
+
+           console.log(gameFound.playersON.push(req.user._id))
+            
+            if (gameFound.playersON.push(req.user._id) == 4) {
+              Game.findByIdAndUpdate(
+                gameFound._id,
+                {$addToSet:{playersON:gameFound.playersON}, $set:{active:false}} , 
+                { new: true }
+              )
+              .then(
+                res.redirect("/play")
+              ) 
+      
+            }
+  
+            else {
             Game.findByIdAndUpdate(
               gameFound._id,
-              {$addToSet:{playersON:gameFound.playersON}, $set:{active:false}} , // ||, active:true ||comprobar si el active es true ahora en la DB
+              {$addToSet:{playersON:gameFound.playersON}} , 
+              { new: true }
+              )
+              .then(
+                res.redirect("/play")
+              ) 
+      
+            }
+                
+      
+        }
+        
+        else { 
+          newGame
+          .save()
+          .then(gameSession => {
+            gameSession.playersON.push(req.user._id);
+            
+            Game.findByIdAndUpdate(
+              gameSession._id,
+              {$addToSet:{playersON:gameSession.playersON}, $set:{active:true}} , 
               { new: true }
             )
             .then(
               res.redirect("/play")
             ) 
-    
-          }
-
-          else {
-          Game.findByIdAndUpdate(
-            gameFound._id,
-            {$addToSet:{playersON:gameFound.playersON}} , // ||, active:true ||comprobar si el active es true ahora en la DB
-            { new: true }
+            
+          })
+          .catch(err => {
+            console.log("Something went wrong ON THE PLAY");
+          })
+      
+        } 
+  
+      })
+  
+    }
+    else{
+      newGame
+          .save()
+          .then(gameSession => {
+            gameSession.playersON.push(req.user._id);
+            
+            Game.findByIdAndUpdate(
+              gameSession._id,
+              {$addToSet:{playersON:gameSession.playersON}, $set:{active:true}} , 
+              { new: true }
             )
             .then(
               res.redirect("/play")
             ) 
-    
-          }
-              
-    
-      }
-      
-      else { 
-        console.log(gameFound.active)
-        newGame
-        .save()
-        .then(gameSession => {
-          gameSession.playersON.push(req.user._id);
-          console.log(gameSession._id);
-          console.log(gameSession.playersON);
-          
-          Game.findByIdAndUpdate(
-            gameSession._id,
-            {$addToSet:{playersON:gameSession.playersON}, $set:{active:true}} , // ||, active:true ||comprobar si el active es true ahora en la DB
-            { new: true }
-          )
-          .then(
-            res.redirect("/play")
-          ) 
-          
-        })
-        .catch(err => {
-          console.log("Something went wrong ON THE PLAY");
-        })
-    
-      } 
+            
+          })
+          .catch(err => {
+            console.log("Something went wrong ON THE PLAY");
+          })
+    }
+  })
 
-    })
-
-  } else {
-    console.log("crea game!")
-    newGame
-        .save()
-        .then(gameSession => {
-          gameSession.playersON.push(req.user._id);
-          console.log(gameSession._id);
-          console.log(gameSession.playersON);
-          
-          Game.findByIdAndUpdate(
-            gameSession._id,
-            {$addToSet:{playersON:gameSession.playersON}, $set:{active:true}} , // ||, active:true ||comprobar si el active es true ahora en la DB
-            { new: true }
-          )
-          .then(
-            res.redirect("/play")
-          ) 
-          
-        })
-        .catch(err => {
-          console.log("Something went wrong ON THE PLAY");
-        })
-  }
-
-
-
+ 
   
 }
 // }
