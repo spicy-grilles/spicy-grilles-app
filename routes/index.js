@@ -162,36 +162,17 @@ router.post("/addPlayer", (req, res) => {
 // }
 );
 
-// OTRA VERSIÓN !!!!
-// router.get("/play", (req, res) => {
-//   Game.findById()
-//   Restaurant.find(),
-//   Item.find()
-//   User.findById(req.user._id).then(user => {
-
-//     while (maxUsers <= 4) {
-//     maxUsers = arrayUsers.push(user.data._id);
-//     }
-//       .then(user =>{
-//         res.render("play", user))
-//       .catch(console.log("Partida llena"))
-//       })
-
-//     //aquí hay que hacer lo de que haya 4 users conectados
-
-//   });
-
-// });
-// ********
-
 router.get("/play", (req, res) => {
-  Game.findById();
-  Restaurant.find();
-  Item.find();
-  User.findById(req.user._id).then(user => {
-    //aquí hay que hacer lo de que haya 4 users conectados
-    res.render("play", user);
-  });
+  // Restaurant.find();
+  // Item.find();
+  Game.findById()
+  .then(
+    User.findById(req.user._id).then(user => {
+      //aquí hay que hacer lo de que haya 4 users conectados
+      res.render("play", user);
+    })
+  )
+  
 });
 
 // router.post("/restaurants", (req,res) => {
