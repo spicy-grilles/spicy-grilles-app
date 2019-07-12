@@ -7,7 +7,8 @@ const gameSchema = new Schema(
     startTime: String,
     finishTime: String,
     players:{type: Schema.Types.ObjectId, ref: "User"},
-    playersON: [String]
+    playersON: [String],
+    active: {type: Boolean, default: false}
   },
   {
     timestamps: {

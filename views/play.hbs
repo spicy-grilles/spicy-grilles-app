@@ -1,7 +1,7 @@
 <section class="game">
 
   <div id="mapCanvas"></div>
-  
+
   <div class="sp">
 
     <div>Points: <span id="points">{{pointsMatch}}</span></div>
@@ -11,7 +11,16 @@
 
     <div><button id="finish">Finish Turn</button></div>
     <div><img src="/images/Clock.gif" alt="clock"></div>
+    
+    <div>
+      <ol>
+        
+        {{#each playersInSession}}
+        <li>{{this.playerUsername}}</li>
+         {{/each}}
 
+      </ol>
+    </div>
   </div>
 
 
